@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_18_143812) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_19_053057) do
   create_table "fees", force: :cascade do |t|
     t.datetime "date_init"
     t.datetime "date_fin"
@@ -38,6 +38,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_18_143812) do
     t.datetime "updated_at", null: false
     t.index ["merchant_id"], name: "index_orders_on_merchant_id"
     t.index ["shopper_id"], name: "index_orders_on_shopper_id"
+  end
+
+  create_table "report_fees", force: :cascade do |t|
+    t.datetime "date_init"
+    t.datetime "date_fin"
+    t.decimal "amount"
+    t.integer "percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shoppers", force: :cascade do |t|
